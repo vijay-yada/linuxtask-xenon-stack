@@ -1,0 +1,10 @@
+Command Name: internsctl
+Version: v0.1.0
+basically this command do some basic types of operation like lscpu , useradd and
+ etc
+Description:
+some parameter of this command are given below
+--size,-s ->gives size of file
+--permissions,-p -> gives permisiion associated with a file
+--owner,-o -> tells owner of file
+--last-modified,-m -> gives last modify date
