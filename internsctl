@@ -30,7 +30,10 @@ elif [[ "$#" -eq 3 ]];
    getent group root
  elif [ $1 == file ] && [ $2 == getinfo ];
   then
-   ls -l $3	  
+   echo "File:       $3"
+   echo "Access:     `ls-l $3 |awk '{ print $1; }'`"
+   echo "Size(B):    `stat -c '%U' $3`"
+   echo "Owner:      `stat -c '%y' $3`"
  fi
 elif [[ "$#" -eq 4 ]];
  then
