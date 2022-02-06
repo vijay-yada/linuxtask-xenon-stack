@@ -7,6 +7,8 @@ if [[ "$#" -eq 1 ]];
  elif [ $1 == --help ];
   then
    echo "help infomation of the internctl"
+ else
+   echo "Command Not Found"
  fi  
 elif [[ "$#" -eq 2 ]];
  then	
@@ -19,6 +21,8 @@ elif [[ "$#" -eq 2 ]];
  elif [ $1 == user ] && [ $2 == list ];
   then
    cat /etc/passwd
+ else
+   echo "Command Not Found"
  fi
 elif [[ "$#" -eq 3 ]];
  then	
@@ -34,6 +38,8 @@ elif [[ "$#" -eq 3 ]];
    echo "Access:     `ls-l $3 |awk '{ print $1; }'`"
    echo "Size(B):    `stat -c '%U' $3`"
    echo "Owner:      `stat -c '%y' $3`"
+ else
+  echo "Command Not Found"
  fi
 elif [[ "$#" -eq 4 ]];
  then
@@ -49,5 +55,9 @@ elif [[ "$#" -eq 4 ]];
  elif [ $1 == file ] && [ $2 == getinfo ] && [ $3 == --last-modified ] || [ $3 == m ];
   then
    stat -c '%y' $4
+ else
+   echo "Command Not Found"
  fi
+else
+  echo "Command Not Found"
 fi
